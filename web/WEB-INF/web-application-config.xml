@@ -59,4 +59,5 @@
         </property>
     </bean>
     <jpa:repositories base-package="org.sprimaudi.zkspring.repository"/>
+
 </beans>

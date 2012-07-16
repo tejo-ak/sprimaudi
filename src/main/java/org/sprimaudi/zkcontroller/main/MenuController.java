@@ -1,29 +1,36 @@
-package org.sprimaudi.zkcontroller;
+package org.sprimaudi.zkcontroller.main;
 
-import org.sprimaudi.zkspring.TesWire;
-import org.sprimaudi.zkspring.repository.AuditorRepository;
+import org.sprimaudi.zkspring.util.PageMgt;
+import org.zkoss.lang.Threads;
+import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.Listen;
 import org.zkoss.zk.ui.select.annotation.VariableResolver;
 import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zk.ui.select.annotation.WireVariable;
 import org.zkoss.zkplus.spring.DelegatingVariableResolver;
-import org.zkoss.zul.Button;
-import org.zkoss.zul.Textbox;
 import org.zkoss.zul.Window;
+import org.zkoss.zul.Menuitem;
 
-import java.util.UUID;
 
 /**
  * Created by IntelliJ IDEA.
  * User: User
- * Date: 7/15/12
- * Time: 6:32 PM
+ * Date: 7/17/12
+ * Time: 1:41 AM
  * To change this template use File | Settings | File Templates.
  */
 @VariableResolver(DelegatingVariableResolver.class)
-public class MainController extends SelectorComposer<Window> {
+public class MenuController extends SelectorComposer<Window> {
 
+    @Wire
+    Menuitem mnApproval;
+
+    @WireVariable
+    PageMgt pgm;
+
+    @Wire("window")
+    Window self;
 
     @Override
     public void doAfterCompose(Window comp) throws Exception {
@@ -31,9 +38,18 @@ public class MainController extends SelectorComposer<Window> {
 
     }
 
-    @Listen("onClick=#btnTes")
-    public void klikTes() {
-
+    @Listen("onClick=#mnApproval")
+    public void approve() {
+        pgm.showMain("zuls/perencanaan/browse_perencanaan.zul");
     }
 
+    @Listen("onCreate=window")
+    public void onMenu() {
+    }
+
+    @Listen("onAfterCreate=window")
+    public void onAfterCreate() {
+
+
+    }
 }

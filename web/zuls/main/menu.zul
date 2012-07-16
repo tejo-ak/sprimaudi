@@ -2,30 +2,24 @@
     xmlns:h="http://www.w3.org/1999/xhtml"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
-    <window id="winMenu">
+    <window id="winMenu" apply="org.sprimaudi.zkcontroller.main.MenuController">
         <menubar id="menu">
             <menuitem id="mnHome" label="Home">
-
             </menuitem>
             <menu label="Management Resiko" image="">
                 <menupopup>
                     <menu id="mi008" label="Jenis Resiko">
-
                     </menu>
                     <menu id="mi010" label="Update Resiko" image="images/awas_16.png">
-
                     </menu>
                     <menu id="mi011" label="Trend">
-
                     </menu>
-
                 </menupopup>
             </menu>
-
             <menu id="mi006" label="Perencanaan" image="">
                 <menupopup>
                     <menuitem id="mi089" label="Rekomendasi"/>
-                    <menuitem id="mi058" label="Approval"/>
+                    <menuitem id="mnApproval" label="Approval"/>
                 </menupopup>
             </menu>
             <menu label="Pelaksanaan" id="mi007" image="">
