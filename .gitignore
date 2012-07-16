@@ -1,0 +1,9 @@
+target
+.idea
+.settings/*
+#!.settings/.jsdtscope
+.project
+.classpath
+src/main/webapp/static/dojolib/*
+.idea
+out
