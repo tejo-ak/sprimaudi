@@ -23,26 +23,17 @@ import java.util.UUID;
  */
 @VariableResolver(DelegatingVariableResolver.class)
 public class MainController extends SelectorComposer<Window> {
-    @Wire
-    Textbox txtNama;
-    @Wire
-    Button btnTes;
-    @WireVariable
-    TesWire tesWire;
-    @WireVariable
-    AuditorRepository auditorRepository;
+
 
     @Override
     public void doAfterCompose(Window comp) throws Exception {
         super.doAfterCompose(comp);    //To change body of overridden methods use File | Settings | File Templates.
-        txtNama.setText(UUID.randomUUID().toString());
+
     }
 
     @Listen("onClick=#btnTes")
     public void klikTes() {
-        String pref = ((auditorRepository != null) ? "spring bean wired:" + auditorRepository : "spring bean not wired") + " ";
-        txtNama.setText(pref + UUID.randomUUID().toString());
-        System.out.println(auditorRepository.findAll());
+
     }
 
 }
