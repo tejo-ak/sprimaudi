@@ -73,6 +73,7 @@ public class PageMgt {
         icl.setSrc(pagePath);
         Window win = findChildWindow(icl);
         postOnAfterCreate(win);
+        closePanels();
     }
 
     private Window findChildWindow(Include include) {
